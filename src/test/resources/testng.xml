@@ -1,14 +1,24 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="firstTestSuite" verbose="1" parallel="tests" thread-count="1" >
+<suite name="firstTestSuite" verbose="1" parallel="tests" thread-count="1">
     <parameter name="expectedCount" value="2"/>
+    <test name="ExceptionTest">
+        <classes>
+            <class name="homework1.ExceptionProneTest"/>
+        </classes>
+    </test>
+    <test name="ExceptionSafeTEst">
+        <classes>
+            <class name="homework1.ExceptionSafeTest"/>
+        </classes>
+    </test>
     <test name="FirstTest">
         <classes>
-            <class name="functional.FirstTest" />
+            <class name="functional.FirstTest"/>
         </classes>
     </test>
     <test name="XpathCSSTest">
         <classes>
-            <class name="functional.XpathCSSSelector" />
+            <class name="functional.XpathCSSSelector"/>
         </classes>
     </test>
 </suite>
