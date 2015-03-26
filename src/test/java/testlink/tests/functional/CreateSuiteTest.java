@@ -19,7 +19,7 @@ public class CreateSuiteTest extends TestSteps {
     @Test
     public void createSuite() {
         Assert.assertTrue(login("admin", "admin"), "Login failed");
-        Assert.assertTrue(openSpecificationPage());
+        Assert.assertTrue(createTestSuite());
     }
 
     @AfterSuite

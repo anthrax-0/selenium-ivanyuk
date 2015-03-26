@@ -8,14 +8,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 /**
  * Created by Ivan.Ivanyuk on 3/20/2015.
  */
-public class HomePage {
-    protected WebDriver driver;
+public class HomePage extends AbstractPage{
 
-    private static final By headerFrame = By.name("titlebar");
     private static final By version = By.xpath("//div[@class='menu_title']/span[contains(text(),'TestLink')]");
 
     public HomePage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public boolean isOpened() {
