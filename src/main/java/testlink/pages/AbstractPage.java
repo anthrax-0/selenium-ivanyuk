@@ -4,12 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import testlink.selenium.DriverWrapper;
 
 /**
  * Created by Ivan.Ivanyuk on 3/24/2015.
  */
 public class AbstractPage {
-    protected WebDriver driver;
+    protected DriverWrapper driver;
     protected WebDriverWait wait;
 
     protected static final By headerFrame = By.name("titlebar");
@@ -18,7 +19,7 @@ public class AbstractPage {
     protected final static By workFrame = By.name("workframe");
 
 
-    public AbstractPage(WebDriver driver) {
+    public AbstractPage(DriverWrapper driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 15);
     }

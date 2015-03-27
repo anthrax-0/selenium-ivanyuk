@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import testlink.selenium.DriverWrapper;
 
 /**
  * Created by Ivan.Ivanyuk on 3/20/2015.
@@ -12,7 +13,7 @@ public class HomePage extends AbstractPage{
 
     private static final By version = By.xpath("//div[@class='menu_title']/span[contains(text(),'TestLink')]");
 
-    public HomePage(WebDriver driver) {
+    public HomePage(DriverWrapper driver) {
         super(driver);
     }
 

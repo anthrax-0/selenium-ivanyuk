@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
+import testlink.selenium.DriverWrapper;
 import testlink.steps.TestSteps;
 
 /**
@@ -13,7 +14,7 @@ import testlink.steps.TestSteps;
 public class CreateSuiteTest extends TestSteps {
     @BeforeSuite
     public void initEnv() {
-        driver = new FirefoxDriver();
+        driver = new DriverWrapper(new FirefoxDriver());
     }
 
     @Test

@@ -2,6 +2,7 @@ package testlink.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import testlink.selenium.DriverWrapper;
 
 /**
  * Created by Ivan.Ivanyuk on 3/20/2015.
@@ -13,7 +14,7 @@ public class LoginPage extends AbstractPage {
     private final static By passwordField = By.name("tl_password");
     private static final By loginButton = By.name("login_submit");
 
-    public LoginPage(WebDriver driver) {
+    public LoginPage(DriverWrapper driver) {
         super(driver);
     }
 

@@ -1,16 +1,18 @@
 package testlink.steps;
 
 import org.openqa.selenium.WebDriver;
+import testlink.models.TestCase;
 import testlink.models.TestSuite;
 import testlink.pages.HomePage;
 import testlink.pages.LoginPage;
 import testlink.pages.SpecificationPage;
+import testlink.selenium.DriverWrapper;
 
 /**
  * Created by Ivan.Ivanyuk on 3/20/2015.
  */
 public class TestSteps {
-    protected WebDriver driver;
+    protected DriverWrapper driver;
 
     public boolean login(String login, String password) {
         LoginPage loginPage = new LoginPage(driver);
@@ -22,7 +24,10 @@ public class TestSteps {
         HomePage homePage = new HomePage(driver);
         homePage.openSpecificationPage();
         SpecificationPage specificationPage = new SpecificationPage(driver);
-        specificationPage.createTestSuite(new TestSuite());
+        TestSuite testSuite = new TestSuite();
+        specificationPage.createTestSuite(testSuite);
+        TestCase testCase = new TestCase();
+        specificationPage.createTestCase(testSuite,testCase);
         return true;
 
     }
