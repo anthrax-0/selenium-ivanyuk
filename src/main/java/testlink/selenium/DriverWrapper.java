@@ -48,7 +48,7 @@ public class DriverWrapper implements WebDriver {
     public WebElement findElementAndWait(By by) {
         WebDriverWait wait = new WebDriverWait(driver, TIME_TO_WAIT);
         wait.until(ExpectedConditions.presenceOfElementLocated(by));
-        return null;
+        return driver.findElement(by);
     }
 
     @Override

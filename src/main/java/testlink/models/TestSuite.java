@@ -8,7 +8,10 @@ public class TestSuite {
     public String details = "Some details";
 
     public TestSuite(){
-
     }
 
+    public TestSuite(String name, String details){
+        this.name = name;
+        this.details = details;
+    }
 }

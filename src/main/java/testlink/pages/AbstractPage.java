@@ -1,15 +1,19 @@
 package testlink.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import testlink.selenium.DriverWrapper;
+
+
 
 /**
  * Created by Ivan.Ivanyuk on 3/24/2015.
  */
 public class AbstractPage {
+    Logger log = LoggerFactory.getLogger(AbstractPage.class);
+
     protected DriverWrapper driver;
     protected WebDriverWait wait;
 
@@ -26,22 +30,25 @@ public class AbstractPage {
 
     protected void switchToTitleBar() {
         driver.switchTo().defaultContent();
-        driver.switchTo().frame(driver.findElement(headerFrame));
+        driver.switchTo().frame(driver.findElementAndWait(headerFrame));
     }
 
     protected void switchToMainFrame() {
+        log.info("SwitchToMainFrame");
         driver.switchTo().defaultContent();
-        driver.switchTo().frame(driver.findElement(mainFrame));
+        driver.switchTo().frame(driver.findElementAndWait(mainFrame));
     }
 
     protected void switchToWorkFrame() {
+        log.info("SwitchToWorkFrame");
         switchToMainFrame();
-        driver.switchTo().frame(driver.findElement(workFrame));
+        driver.switchTo().frame(driver.findElementAndWait(workFrame));
     }
 
     protected void switchToTreeFrame() {
+        log.info("SwitchToTreeFrame");
         switchToMainFrame();
-        driver.switchTo().frame(driver.findElement(treeFrame));
+        driver.switchTo().frame(driver.findElementAndWait(treeFrame));
     }
 
 }

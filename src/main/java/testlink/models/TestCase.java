@@ -9,6 +9,11 @@ public class TestCase {
     public String preconditions = "Test preconditions";
 
     public TestCase() {
+    }
 
+    public TestCase(String title, String summary, String preconditions) {
+        this.title = title;
+        this.summary = summary;
+        this.preconditions = preconditions;
     }
 }
